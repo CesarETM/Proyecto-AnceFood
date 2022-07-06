@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Tiro+Telugu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&family=Tiro+Telugu&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.nav-container {
+    width: auto;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: linear-gradient(to right, #46c6aa, #3dc0a0,
+     #33b996, #2ab38b, #20ac81);}
+
+
+.navbar_logo{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.img-logo{
+    width:100px;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo p {
+    cursor: pointer;
+}
+
+.p1{
+    font-size: 18px;
+    color: rgb(71, 148, 47);
+}
+
+.p2{
+    font-weight: 900;
+    font-size: 18px;
+    color: rgb(196, 127, 38);
+}
+
+
+
+.nav_menu_list{
+    width: 700px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav_menu_list li a {
+    padding: 15px 40px;
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+}
+
+li a:hover{
+    padding: 20px 40px;
+    padding-top: 22px;
+    background-color: rgb(214, 156, 69);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3 ease 0s;
+    color: white;
+}
+
+
+.navbar_right{
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cta{
+    padding: 0 5px;
+}
+
+.button-login{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s;
+    color: white;
+    background-color: rgb(13, 134, 60);
+    
+}
+
+.button-register{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s;
+    color: white;
+    background-color: rgb(221, 162, 33);
+}
+
+.button-login:hover{
+    background-color: rgba(3, 109, 34, 0.8);
+}
+
+.button-register:hover{
+    background-color: rgb(190, 139, 27);
+}
+
+.container{
+    max-width: 90%;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.imagen-portada{
+    width: 1700px;
+    height: 500px;
+    position: relative;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    display: block;
+    justify-content: center;
+    opacity: 70%;
+}
+
+.container-img{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+footer{
+    color: white;
+    background-image: linear-gradient(to right, #46c6aa, #3dc0a0, #33b996,
+     #2ab38b, #20ac81);
+    text-align: center;
+    width: auto;
+    position: relative;
+}
+
+footer p{
+    padding: 20px 0 ;
+}
+
+
+.text{
+    text-align: center;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 0 0 2px black;
+}
+
+.button-start{
+    margin-top: 30px;
+    padding: 20px 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s;
+    color: white;
+    background-color: rgb(199, 39, 65);
+}
+
+.button-start:hover{
+    background-color: rgb(126, 10, 30);
+}
+
+.container-plates{
+    width: auto;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.img-platos1 {
+    width: 200px;
+    height: 200px;
+}
+.img-platos2 {
+    width: 200px;
+    height: 200px;
+}
+.img-platos3 {
+    width: 150px;
+    height: 190px;
+    }
+
+.img-platos4 {
+    width: 150x;
+    height: 190px;
+}
+.card-details   {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tarjeta{
+    margin: 20px 20px ;
+    width: 200px;
+    height: 350px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 0 20px;
+}
+
+.card-plate-name {
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.card-title{
+    width: 100%;
+    height: 100px;
+    font-size: 40px;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*     LOG SCREEN       */
+
+.container-column-login{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+
+.container-imagen-login{
+    width: 50%;
+    overflow: hidden;
+
+}
+
+.container-login{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.imagen-logo-login{
+    width: 100%;
+    height: 90px;
+    overflow: hidden;
+}
+
+
+.imagen-logo-login img {
+    margin-left: 20px;
+    width: 90px;
+   
+}
+
+.container-imagen-login img{
+    width: 150%;
+    height: 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container-imagen-login img:hover{
+    opacity: 70%;
+}
+
+
+.form-container{
+    width: 50%;
+    height: 50%;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+
+
+.form-control{
+
+    width: 90%;
+    height: 40px;
+    border-radius: 10px;  
+    padding: .30rem;
+   /*  display: block;
+    width: 100%;
+    padding: .6rem .75rem;
+    font-size: .88rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid;
+    border-radius: .5rem; */
+    }
+
+.container-button-login{
+
+    display: block;
+    text-align: center;
+}
+
+.button-iniciar-sesion{
+    width: 50%;
+    padding: 10px 20px;
+    border: none;
+    margin-top: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #a5751d;
+    
+}
+
+.button-iniciar-sesion:hover{
+    background-color: #755417;
+}
+
+.form-group{
+    font-size: small;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-container label{
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.form-container  h1{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+/* register */
+
+
+
