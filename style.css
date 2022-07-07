@@ -105,7 +105,7 @@ li a:hover{
     
 }
 
-.button-register{
+.button-register-index{
     padding: 10px 20px;
     border: none;
     border-radius: 50px;
@@ -319,23 +319,10 @@ footer p{
 
 .form-control{
 
-    width: 90%;
+    width: 100%;
     height: 40px;
     border-radius: 10px;  
     padding: .30rem;
-   /*  display: block;
-    width: 100%;
-    padding: .6rem .75rem;
-    font-size: .88rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    border: 1px solid;
-    border-radius: .5rem; */
     }
 
 .container-button-login{
@@ -356,7 +343,7 @@ footer p{
 }
 
 .button-iniciar-sesion:hover{
-    background-color: #755417;
+    background-color: #bd8319;
 }
 
 .form-group{
@@ -379,5 +366,50 @@ footer p{
 
 /* register */
 
+.container-imagen-register img{
+    width: 130%;
+    height: 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
+.container-imagen-register{
+    width: 50%;
+    overflow: hidden;
+}
 
+.container-imagen-register img:hover{
+    opacity: 70%;
+}
+
+.form-control-register{
+
+    width: 90%;
+    height: 20px;
+    padding: 3px;
+    border-radius: 6px;
+/*     border-style: none; */
+    border-color: green;
+    }
+
+.button-register{
+        width: 50%;
+        padding: 10px 20px;
+        border: none;
+        margin-top: 20px;
+        font-size: 15px;
+        border-radius: 50px;
+        cursor: pointer;
+        background-color: #e79f19;
+        
+    }
+.button-register:hover{
+        background-color: #bd8319;
+    }
+
+.form-label{
+    padding-top: 15px;
+    text-align: center;
+}
