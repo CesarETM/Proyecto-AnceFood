@@ -307,14 +307,7 @@ footer p{
 }
 
 
-.form-container{
-    width: 50%;
-    height: 50%;
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-}
+
 
 
 .form-control{
@@ -390,7 +383,6 @@ footer p{
     height: 20px;
     padding: 3px;
     border-radius: 6px;
-/*     border-style: none; */
     border-color: green;
     }
 
@@ -409,7 +401,59 @@ footer p{
         background-color: #bd8319;
     }
 
-.form-label{
+.form-label-1{
     padding-top: 15px;
     text-align: center;
 }
+
+/* Ejemplo de input */
+
+.card-container{
+    width: 200 px;
+}
+
+.form__group{
+    --color: #5757577e;
+    position: relative;
+    margin: 20px 0;
+    text-align: center;    
+}
+
+.form-input{
+    width: 350px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: #706c6c;
+    padding: .6em .3em;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--color);
+}
+
+.form_label{
+    color: #5757577e;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 60px;
+    transform: translate(10px);
+    transition: transform .5s, color .3s;
+}
+
+.form-input:focus + .form_label, 
+.form-input:not(:placeholder-shown) + .form_label{
+    transform: translateY(-12px) scale(.7);
+    transform-origin: top left;
+    --color: #3866f2;
+}
+
+.form-container{
+    width: 500px;   
+    height: 550px;
+    box-shadow: 20px 15px 10px rgba(0, 0, 0, 0.26);
+    margin: auto;
+
+}
+
+
+/* Aquí termina el ejemplo */

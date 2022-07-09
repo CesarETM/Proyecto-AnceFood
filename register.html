@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../img/LOGO (1).png">
+    <script src="https://kit.fontawesome.com/cbc738b684.js" crossorigin="anonymous"></script>
     <title>Ancefood | Comidas saludables</title>
 </head>
 
@@ -15,31 +16,36 @@
         <div class="container-imagen-register">
             <img src="./img/image-registro.jpg" alt="">
         </div>
+        <i class="fa-solid fa-user"></i>
+
         <div class="container-login">
             <div class="imagen-logo-login">
-                <img src="./img/LOGO (2).png" alt="">
+                <a href="index.html"><img src="./img/LOGO (2).png" alt=""></a>
             </div>
-            <form class="form-container" action="register">
+            <form class="form-container card-container" action="register">
                 <h1>Registro</h1>
-                <label for="">Ingrese su Nombre</label>
-                <input type="text" id="Nombre" class="form-control-register" placeholder="Ingrese sus nombres">
-                <label for="">Ingrese sus Apellidos</label>
-                <input type="text" id="apellidos" class="form-control-register" placeholder="Ingrese sus apellidos">
-                <label>Ingrese su correo electronico</label>
-                <div class="container-email">
-                    <input type="email" name="email" id="email" placeholder="Ejemplo@correo.com" class="form-control-register">
+                <div class="form__group">
+                    <input type="text" id="name" class="form-input" placeholder=" ">
+                    <label for="" class="form_label">Ingrese su Nombre</label>
                 </div>
-                <label>Ingrese su contraseña</label>
-                <div class="container-password">
-                    <input type="password" name="passowrd" placeholder="Su contraseña debe tener minimo 8 digitos"
-                        class="form-control-register">
+                <div class="form__group">
+                    <input type="text" id="apellidos" class="form-input" placeholder=" ">
+                    <label for="" class="form_label">Ingrese sus Apellidos</label>
+                </div>
+                <div class="form__group">
+                    <input type="email" name="email" id="email" placeholder=" " class="form-input">
+                    <label class="form_label">Ingrese su correo electronico</label>
+                </div>
+                <div class="form__group">
+                    <input type="password" name="passowrd" placeholder=" " class="form-input">
+                    <label class="form_label">Ingrese su contraseña</label>
                 </div>
                 <div class="container-button-login">
                     <button type="submit" class="button-register">Registrar</button>
                 </div>
-                <div class="form-label">
-                <Label>¿Ya eres miembro? <a href="login.html">Inicia tu sesión</a></Label>
-            </div>
+                <div class="form-label-1">
+                    <Label>¿Ya eres miembro? <a href="login.html">Inicia tu sesión</a></Label>
+                </div>
             </form>
 
         </div>
