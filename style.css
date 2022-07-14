@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+
 }
 
 
@@ -154,11 +155,12 @@ li a:hover{
 }
 
 footer{
+    width: 100%;
     color: white;
+    font-size: 15px;
     background-image: linear-gradient(to right, #46c6aa, #3dc0a0, #33b996,
      #2ab38b, #20ac81);
     text-align: center;
-    width: auto;
     position: relative;
 }
 
@@ -322,21 +324,6 @@ footer p{
     margin-top: 30px;
 }
 
-/* .button-iniciar-sesion{
-    width: 50%;
-    padding: 10px 20px;
-    border: none;
-    margin-top: 20px;
-    border-radius: 50px;
-    cursor: pointer;
-    background-color: #a5751d;
-    
-}
-
-.button-iniciar-sesion:hover{
-    background-color: #bd8319;
-} */
-
 /* From uiverse.io */
 .button-iniciar-sesion {
     padding: 1.3em 3em;
@@ -366,7 +353,7 @@ footer p{
   }
 
 
-  /* asdasdasdasdasdasd */
+  /* button uiverse.io */
 
 
 
@@ -491,3 +478,205 @@ footer p{
 
 
 /* Aquí termina el ejemplo */
+
+
+/* PAGINA DE PLANES */
+
+
+.container-plans{
+    width: 100%;
+    height: 150vh;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.container-h1{
+    width: auto;
+    height: 120px;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+
+.container__plans{
+    width: auto;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container-plans-card{
+    width: 1100px;
+    height: 75px;
+    background: #f1eeee;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.container-plans-button{
+    width: 350px;
+    height: 70px;
+    border-radius: 50px;
+    background: #27884d;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+
+.container-card{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;   
+    cursor: pointer;
+    justify-content: center;
+    padding: 65px 0;
+}
+
+/* From uiverse.io by @Tiagoadag */
+
+/* .card-1 {
+    width: 350px;
+    height: 650px;
+    background-image: linear-gradient(163deg, #fca400 0%, #d49827 100%);
+    border-radius: 20px;
+    transition: all .3s;   
+    display: flex;
+   }
+   
+   .card2 {
+    width: 350px;
+    height: 650px;
+    background-color: white;
+    border-radius:20px;
+    transition: all .2s;
+   }
+   
+   .card2:hover {
+    transform: scale(0.98);
+    border-radius: 20px;
+   }
+    */
+
+
+    .card-1 {
+        width: 372px;
+        height: 600px;
+        background: rgb(255, 255, 255);
+        border-radius: 1em;
+        box-shadow: 0.3em 0.3em 0.7em #00000015;
+        transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: rgb(222, 250, 209) 0.15em solid;
+       }
+       
+       .card-1:hover {
+        border: #ff9900 0.15em solid;
+        box-shadow: 10px 5px 2.5px 1px rgba(0, 0, 0, 0.144);
+       }
+
+
+
+/* From uiverse.io by @Tiagoadag */
+
+.card-h3{
+    width: 100%;
+    height: 80px;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-price{
+    width: 100%;
+    height: 80px;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+
+.card-button{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-button-plan{
+    width: 300px;
+    padding: 10px 20px;
+    border: none;
+    font-size: 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #292929;
+    color: white;
+}
+
+.card-plan-h3{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-plan-h3 h3{
+    color: rgb(175, 173, 173);
+    font-weight: 200;
+    font-size: 15.4px;
+    text-align: center;
+
+}
+
+.card-line{
+    width: 300px;
+    height: 30px;
+    border-bottom: 1px solid rgb(212, 212, 212);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-recomendaciones{
+    width: 275px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-recomendaciones h3{
+    font-weight: 200;
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+.card-textlist{
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 0.5em;
+}
+
+
+svg{
+    width: 15px;
+    filter: invert(52%) sepia(33%) saturate(840%) hue-rotate(111deg) brightness(99%) contrast(98%);
+}
+
+.card-textlist2{
+    height: 50px;
+}
+
+
