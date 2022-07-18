@@ -1,0 +1,39 @@
+<table class="table">
+
+    <thead>
+        <tr>
+            <th scope="col">Nº</th>
+            <th scope="col">Plato</th>
+            <th scope="col">Hora de envio</th>
+            <th scope="col">Dias</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Hora de creacion</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {{#each orders}}
+            <td>{{id}} </td>
+            <td> {{plate}} </td>
+            <td>{{hora_envio}} </td>
+            <td>{{dia}} </td>
+            <td>{{direccion}} </td>
+            <td>{{timeago created_at}}</td>
+
+            <td> <a href="/links/delete/{{id}}" class="btn btn-danger">Delete</a>
+                <a href="/links/edit/{{id}}" class="btn btn-secondary">Edit</a>
+            </td>
+
+        </tr>
+        {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>There are not orders saved yet.</p>
+                    <a href="/links/add">Created One!</a>
+                </div>
+            </div>
+        {{/each}}
+    </tbody>
+
+</table>

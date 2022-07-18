@@ -1,0 +1,48 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+
+            <div class="card">
+                <div class="card-body">
+                    <form action="/links/add" method="POST">
+                    <label for="exampleFormControlSelect1">Seleccione platillo</label>
+                        <select class="form-control" id="exampleFormControlSelect1" name="plate" autofocus>
+                            <option>Arroz con pollo</option>
+                            <option>Lomo saltado</option>
+                            <option>Carapulcra</option>
+                            <option>Guiso de pollo</option>
+                            <option>Guiso de carne</option>
+                        </select>
+                        <div class="form-group">
+                            <input type="time" name="hora_envio" class="form-control" placeholder="Hora de envio">
+                        </div>
+                         <label for="exampleFormControlSelect1">Seleccione días de envio</label>
+                        <select class="form-control" id="exampleFormControlSelect1" name="dia">
+                            <option>Lunes</option>
+                            <option>Martes</option>
+                            <option>Miercoles</option>
+                            <option>Jueves</option>
+                            <option>Viernes</option>
+                            <option>Sabado</option>
+                            <option>Domingo</option>
+                            <option>Lun, Mi y Vi</option>
+                            <option>Ma, Ju, Sa</option>
+                            <option>Lun, Ma, Mi</option>
+                            <option>Ju, Vi, Sa</option>
+                            <option>Todos los dias</option>
+                        </select>
+                        <div class="form-group">
+                            <input type="text" name="direccion" class="form-control" placeholder="Address">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Guardar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
