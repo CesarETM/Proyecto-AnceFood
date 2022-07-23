@@ -40,23 +40,28 @@
 
 .logo p {
     cursor: pointer;
+    padding-bottom: 0;
 }
 
 .p1{
     font-size: 18px;
     color: rgb(71, 148, 47);
+    margin-bottom: 0;
+    
 }
 
 .p2{
     font-weight: 900;
     font-size: 18px;
     color: rgb(196, 127, 38);
+    margin-bottom: 0; 
 }
 
 
 
 .nav_menu_list{
     width: 700px;
+    margin-bottom: 0px;
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -71,7 +76,7 @@
     color: white;
 }
 
-li a:hover{
+.nav_menu_list li a:hover{
     padding: 20px 40px;
     padding-top: 22px;
     background-color: rgb(214, 156, 69);
@@ -146,7 +151,7 @@ li a:hover{
 }
 
 .container-img{
-    width: 100%;
+    width: 150%;
     overflow: hidden;
     position: relative;
     margin: 0 auto;
@@ -161,11 +166,12 @@ footer{
     background-image: linear-gradient(to right, #46c6aa, #3dc0a0, #33b996,
      #2ab38b, #20ac81);
     text-align: center;
-    position: relative;
+
 }
 
 footer p{
     padding: 20px 0 ;
+    margin-bottom: 0;
 }
 
 
@@ -670,10 +676,10 @@ footer p{
 }
 
 
-svg{
+/* svg{
     width: 15px;
     filter: invert(52%) sepia(33%) saturate(840%) hue-rotate(111deg) brightness(99%) contrast(98%);
-}
+} */
 
 .card-textlist2{
     height: 50px;

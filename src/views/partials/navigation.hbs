@@ -2,16 +2,20 @@
 <nav class="navbar navbar-expand-lg navbar-dark " style="background-image: linear-gradient(to right, #46c6aa, #3dc0a0, #33b996,
      #2ab38b, #20ac81); height: 66px; " >
   <div class="container">
-    <a class="navbar-brand" href="/">Ancefood</a>
+    <div class="logo">
+            <a href="/"><img class="img-logo" src="../img/LOGO (3).png" alt=""></a>
+            <div class="p1 d-flex align-items-center">Ance</div>
+            <div class="p2 d-flex align-items-center">Food</div>
+        </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto" >
         {{#if user}}
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+        <li class="nav-item dropdown " >
+          <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-expanded="false">
             Pedidos
           </a>
@@ -23,7 +27,7 @@
           <li class="nav-item">
             <a href="/profile" class="nav-link">Perfil</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item ">
             <a href="/logout" class="nav-link">Logout</a>
           </li>
         {{else}}
