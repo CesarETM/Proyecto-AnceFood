@@ -3,11 +3,12 @@ const router = express.Router();
 
 const pool = require('../database');
 const { isLoggedIn } = require('../lib/auth');
+const helpers = require('../lib/helpers');
 
 
 // new order
 
-router.get('/add', isLoggedIn, (req, res) => {
+router.get('/adda', isLoggedIn, (req, res) => {
     res.render('links/add');
 });
 
@@ -23,15 +24,24 @@ router.post('/add', isLoggedIn, async (req, res) => {
     };
     await pool.query('INSERT INTO orders set ?', [neworder]),
     req.flash('success', 'Order saved successfully');
-    res.redirect('/links');
+    res.redirect('/links/add');
 });
 
 
 
-router.get('/', isLoggedIn, async (req, res) =>{
+router.get('/add', isLoggedIn, async (req, res) =>{
     const orders = await pool.query('SELECT * FROM orders WHERE user_id = ?', [req.user.id]);
-    res.render('links/list', {orders});
+    res.render('links/add', {orders});
 });
+
+
+
+router.get("/edit-register", isLoggedIn, async (req, res) =>{
+    const usuarios = await pool.query('SELECT * FROM users WHERE id = ? ', [req.user.id]);
+    console.log(usuarios);
+    res.render('links/edit-register', {usuarios});
+});
+
 
 
 
@@ -39,7 +49,7 @@ router.get('/delete/:id', isLoggedIn, async (req, res) =>{
     const { id } = req.params;
     await pool.query('DELETE FROM orders WHERE ID = ?', [id]);
     req.flash('success', 'Order removed successfully!');
-    res.redirect('/links');
+    res.redirect('/links/add');
 });
 
 router.get('/edit/:id', isLoggedIn, async (req, res) => {
@@ -60,7 +70,32 @@ router.post('/edit/:id', isLoggedIn, async (req, res) =>{
     };
     await pool.query('UPDATE orders set ? WHERE ID = ?', [neworder, id]);
     req.flash('success', 'Order update successfully!');
-    res.redirect('/links');
+    res.redirect('/links/add');
+});
+
+/* CAMBIOS Y AUMENTOS DE CODIGO DE CONFIGURACION DE REGISTRO */
+
+router.get('/edit-register/:id', isLoggedIn, async (req, res) => {
+    const {id}  = req.params;
+    const users = await pool.query('SELECT * FROM users WHERE id = ?', [id]);
+    console.log(users);
+    res.render('links/edit-register', {users: users[0]});
+});
+
+
+router.post('/edit-register/:id', isLoggedIn, async (req, res) =>{
+    const {id}  = req.params;
+    const {nombre, apellidos, email, password } = req.body;
+    const changeregister = {
+        nombre,
+        apellidos,
+        email,
+        password
+    };
+    changeregister.password = await helpers.encryptPassword(password);
+    await pool.query('UPDATE users set ? WHERE ID = ?', [changeregister, id]);
+    req.flash('success', 'update profile successfully!');
+    res.redirect('/links/edit-register');
 });
 
 module.exports = router;

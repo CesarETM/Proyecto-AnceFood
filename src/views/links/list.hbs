@@ -3,7 +3,7 @@
     <div class="table-responsive">
         <table class="table">
 
-            <thead style="background-image: linear-gradient(to right, #46c6aa, #3dc0a0,
+            <thead  style="background-image: linear-gradient(to right, #46c6aa, #3dc0a0,
      #33b996, #2ab38b, #20ac81);">
                 <tr>
                     <th scope="col">Nº</th>
@@ -25,6 +25,7 @@
                     <td>{{direccion}} </td>
                     <td>{{timeago created_at}}</td>
 
+
                     <td> <a href="/links/delete/{{id}}" class="btn btn-danger"> <svg xmlns="http://www.w3.org/2000/svg"
                                 width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
                                 <path
@@ -39,19 +40,18 @@
                                     d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                             </svg>Edit</a>
                     </td>
-
                 </tr>
-
                 {{else}}
                 <div class="col-md-4 mx-auto">
                     <div class="card card-body text-center">
-                        <p>There are not orders saved yet.</p>
-                        <a href="/links/add">Created One!</a>
+                        <p>Aun no haz creado ningun pedido.</p>
+                        <a href="/links/add">Crea uno!</a>
                     </div>
                 </div>
                 {{/each}}
-            </tbody>
+                
 
+            </tbody>
         </table>
     </div>
 </div>
