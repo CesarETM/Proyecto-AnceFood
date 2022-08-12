@@ -1,5 +1,6 @@
 
-<div class="p-0 ">
+{{#if user}}
+<div class="container">
             <div class="d-flex flex-column flex-shrink-0 p-3 fixed-bottom text-black bg-dark" style="width: 280px; height: 100vh; background-image: linear-gradient(to right, #46c6aa, #3dc0a0, #33b996,
 #2ab38b, #20ac81); ">
 
@@ -60,12 +61,12 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-dark text-small shadow">
-                        <a class="dropdown-item" href="#">Configuracion</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="/links/edit-register">Configuracion</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
+                        <a class="dropdown-item" href="/Logout">Cerrar Sesion</a>
                     </div>
                 </div>
             </div>
         </div>
+
+        {{/if}}

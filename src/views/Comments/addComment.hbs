@@ -1,4 +1,3 @@
-
 {{#if user}}
 <div class="d-flex d-flex-column">
     <div class="container " style="width: 280px; height: 100vh; margin: 0;">
@@ -8,7 +7,7 @@
             <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                 <div class="d-flex flex-row justify-content-center align-items-center">
                     <a href="login.html"><img class="img-logo" style="width: 100px ; height: 50px;"
-                            src="/img/LOGO (3).png" alt=""></a>
+                            src="../img/LOGO (3).png" alt=""></a>
                     <div class="" style="font-weight: 800; font-size: 23px; color: rgb(71, 148, 47);">Ance</div>
                     <div class="" style="font-weight: 800; font-size: 23px; color: rgb(196, 127, 38);">Food</div>
                 </div>
@@ -23,7 +22,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/links/Comments" class="nav-link text-white ">
+                    <a href="/links/Comments" class="nav-link text-white active">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#speedometer2" />
                         </svg>
@@ -54,20 +53,29 @@
 
 
 
-<div class="container p-4">
-    <div class="row">
-        <div class="col-md-4 mx-auto">
-            <div class="card text-center">
-                <div class="card-body">
-                    <h3>Welcome {{user.nombre}} {{user.apellidos}}</h3>
-                    <a href="/links/add" class="btn btn-primary m-4">
-                        Crea un nuevo pedido
-                    </a>
+    <div class="container">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="/links/addComment" method="POST">
+                            <div style="text-align: center;">AGREGAR RECOMENDACION</div>
+                                <div class="form-group">
+                                    <textarea name="comentario" id="" cols="35" rows="10" placeholder="Ingrese Comentario"></textarea>
+                                </div>  
+                                 <div class="form-group"> 
+                                    <button class="btn btn-success btn-block">
+                                        Agregar Comentario
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
-</div>
+
 {{/if}}

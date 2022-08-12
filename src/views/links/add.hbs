@@ -1,106 +1,182 @@
-<div class="container p-4">
-    <div class="row">
-        <div class="col-md-4 mx-auto">
+{{#if user}}
+<div class="d-flex d-flex-column">
+    <div class="container " style="width: 280px; height: 100vh; margin: 0;">
+        <div class="d-flex flex-column flex-shrink-0 p-3 fixed-bottom text-black bg-dark" style="width: 280px; height: 100vh; background-image: linear-gradient(to right, #46c6aa, #3dc0a0, #33b996,
+#2ab38b, #20ac81); ">
 
-            <div class="card">
-                <div class="card-body">
-                    <form action="/links/add" method="POST">
-                    <label for="exampleFormControlSelect1">Seleccione platillo</label>
-                        <select class="form-control" id="exampleFormControlSelect1" name="plate" autofocus>
-                            <option>Arroz con pollo</option>
-                            <option>Lomo saltado</option>
-                            <option>Carapulcra</option>
-                            <option>Guiso de pollo</option>
-                            <option>Guiso de carne</option>
-                        </select>
-                        <div class="form-group">
-                            <input type="time" name="hora_envio" class="form-control" placeholder="Hora de envio">
-                        </div>
-                         <label for="exampleFormControlSelect1">Seleccione días de envio</label>
-                        <select class="form-control" id="exampleFormControlSelect1" name="dia">
-                            <option>Lunes</option>
-                            <option>Martes</option>
-                            <option>Miercoles</option>
-                            <option>Jueves</option>
-                            <option>Viernes</option>
-                            <option>Sabado</option>
-                            <option>Domingo</option>
-                            <option>Lun, Mi y Vi</option>
-                            <option>Ma, Ju, Sa</option>
-                            <option>Lun, Ma, Mi</option>
-                            <option>Ju, Vi, Sa</option>
-                            <option>Todos los dias</option>
-                        </select>
-                        <div class="form-group">
-                            <input type="text" name="direccion" class="form-control" placeholder="Address">
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-success btn-block">
-                                Agregar Pedido
-                            </button>
-                        </div>
-                    </form>
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <div class="d-flex flex-row justify-content-center align-items-center">
+                    <a href="login.html"><img class="img-logo" style="width: 100px ; height: 50px;"
+                            src="../img/LOGO (3).png" alt=""></a>
+                    <div class="" style="font-weight: 800; font-size: 23px; color: rgb(71, 148, 47);">Ance</div>
+                    <div class="" style="font-weight: 800; font-size: 23px; color: rgb(196, 127, 38);">Food</div>
+                </div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="/links/add" class="nav-link active" aria-current="page">
+                        <svg class="bi me-2" width="16" height="16">
+                        </svg>
+                        Pedidos
+                    </a>
+                </li>
+                <li>
+                    <a href="/links/Comments" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#speedometer2" />
+                        </svg>
+                        Comentarios
+                    </a>
+                </li>
+                
+            </ul>
+            <div class="dropdown-divider"></div>
+            <div class="btn-group">
+                <a href="#"
+                    class="d-flex justify-content-center align-items-center text-decoration-none dropdown-toggle dropdown-toggle-split text-white"
+                    data-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="" width="50" height="50" class="rounded-circle me-2 m-2">
+                    <div class="d-flex justify-content-center align-items-center text-white"
+                        style="margin-right: 10px;">
+                        Bienvenido </div>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-dark text-small shadow">
+                    <a class="dropdown-item" href="/links/edit-register">Configuracion</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/Logout">Cerrar Sesion</a>
                 </div>
             </div>
         </div>
-
     </div>
-    
-</div>
-<div class="container">
 
-    <div class="table-responsive">
-        <table class="table">
-
-            <thead  style="background-image: linear-gradient(to right, #46c6aa, #3dc0a0,
-     #33b996, #2ab38b, #20ac81);">
-                <tr>
-                    <th scope="col">Nº</th>
-                    <th scope="col">Plato</th>
-                    <th scope="col">Hora de envio</th>
-                    <th scope="col">Dias</th>
-                    <th scope="col">Direccion</th>
-                    <th scope="col">Hora de creacion</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    {{#each orders}}
-                    <td>{{id}} </td>
-                    <td> {{plate}} </td>
-                    <td>{{hora_envio}} </td>
-                    <td>{{dia}} </td>
-                    <td>{{direccion}} </td>
-                    <td>{{timeago created_at}}</td>
-
-
-                    <td> <a href="/links/delete/{{id}}" class="btn btn-danger"> <svg xmlns="http://www.w3.org/2000/svg"
-                                width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
-                                <path
-                                    d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z" />
-                            </svg> Delete</a>
-                        <a href="/links/edit/{{id}}" class="btn btn-secondary"> <svg xmlns="http://www.w3.org/2000/svg"
-                                width="16" height="16" fill="currentColor" class="bi bi-pencil-square"
-                                viewBox="0 0 16 16">
-                                <path
-                                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                <path fill-rule="evenodd"
-                                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                            </svg>Edit</a>
-                    </td>
-                </tr>
-                {{else}}
+    {{/if}}
+    <div class="container">
+        <div class="container p-4">
+            <div class="row">
                 <div class="col-md-4 mx-auto">
-                    <div class="card card-body text-center">
-                        <p>Aun no haz creado ningun pedido.</p>
-                        <a href="/links/add">Crea uno!</a>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="/links/add" method="POST">
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Seleccione platillo</label>
+                                    <select class="form-control" id="exampleFormControlSelect1" name="plate" autofocus>
+                                        <option>Arroz con pollo</option>
+                                        <option>Lomo saltado</option>
+                                        <option>Carapulcra</option>
+                                        <option>Guiso de pollo</option>
+                                        <option>Guiso de carne</option>
+                                        <option>Tallarines verdes</option>
+                                        <option>Tallarines rojos</option>
+                                        <option>Tallarines a la huancaina</option>
+                                        <option>Tallarin saltado</option>
+                                        <option>Arroz con mariscos</option>
+                                        <option>Ceviche</option>
+                                        <option>Estofado de Pollo</option>
+                                        <option>Escabeche de pollo</option>
+                                        <option>Papa rellena</option>
+                                        <option>Arroz Chaufa</option>
+                                        <option>Pachamanca</option>
+                                        <option>Cau cau</option>
+                                        <option>Aguadito</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Hora de envio</label>
+                                    <input type="time" name="hora_envio" class="form-control"
+                                        placeholder="Hora de envio">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Seleccione días de envio</label>
+                                    <select class="form-control" id="exampleFormControlSelect1" name="dia">
+                                        <option>Lunes</option>
+                                        <option>Martes</option>
+                                        <option>Miercoles</option>
+                                        <option>Jueves</option>
+                                        <option>Viernes</option>
+                                        <option>Sabado</option>
+                                        <option>Domingo</option>
+                                        <option>Lun, Mi y Vi</option>
+                                        <option>Ma, Ju, Sa</option>
+                                        <option>Lun, Ma, Mi</option>
+                                        <option>Ju, Vi, Sa</option>
+                                        <option>Todos los dias</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Días de la semana</label>
+                                    <input type="text" name="direccion" class="form-control" placeholder="Address">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-success btn-block">
+                                        Agregar Pedido
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-                {{/each}}
-                
+            </div>
+        </div>
+        <div class="container">
 
-            </tbody>
-        </table>
+            <div class="table-responsive">
+                <table class="table">
+
+                    <thead style="background-image: linear-gradient(to right, #46c6aa, #3dc0a0,
+     #33b996, #2ab38b, #20ac81);">
+                        <tr>
+                            <th scope="col">Nº</th>
+                            <th scope="col">Plato</th>
+                            <th scope="col">Hora de envio</th>
+                            <th scope="col">Dias</th>
+                            <th scope="col">Direccion</th>
+                            <th scope="col">Hora de creacion</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {{#each orders}}
+                            <td>{{id}} </td>
+                            <td> {{plate}} </td>
+                            <td>{{hora_envio}} </td>
+                            <td>{{dia}} </td>
+                            <td>{{direccion}} </td>
+                            <td>{{timeago created_at}}</td>
+
+
+                            <td> <a href="/links/delete/{{id}}" class="btn btn-danger"> <svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-trash3" viewBox="0 0 16 16">
+                                        <path
+                                            d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z" />
+                                    </svg> Delete</a>
+                                <a href="/links/edit/{{id}}" class="btn btn-secondary"> <svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path
+                                            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                        <path fill-rule="evenodd"
+                                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                    </svg>Edit</a>
+                            </td>
+                        </tr>
+                        {{else}}
+                        <div class="col-md-4 mx-auto p-2">
+                            <div class="card card-body text-center">
+                                <p>Aun no haz creado ningun pedido.</p>
+                                <p>Crea uno!</p>
+                            </div>
+                        </div>
+                        {{/each}}
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>

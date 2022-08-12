@@ -1,48 +1,129 @@
-<div class="container p-4">
-    <div class="row">
-        <div class="col-md-4 mx-auto">
+{{#if user}}
+<div class="d-flex d-flex-column">
+    <div class="container " style="width: 280px; height: 100vh; margin: 0;">
+        <div class="d-flex flex-column flex-shrink-0 p-3 fixed-bottom text-black bg-dark" style="width: 280px; height: 100vh; background-image: linear-gradient(to right, #46c6aa, #3dc0a0, #33b996,
+#2ab38b, #20ac81); ">
 
-            <div class="card">
-                <div class="card-body">
-                    <form action="/links/edit/{{orders.id}}" method="POST">
-                        <label for="exampleFormControlSelect1">Seleccione platillo</label>
-                        <select class="form-control" value="{{orders.plate}}" id="exampleFormControlSelect1" name="plate" autofocus>
-                            <option>Arroz con pollo</option>
-                            <option>Lomo saltado</option>
-                            <option>Carapulcra</option>
-                            <option>Guiso de pollo</option>
-                            <option>Guiso de carne</option>
-                        </select>
-                        <div class="form-group">
-                            <input type="time" value="{{orders.hora_envio}}" name="hora_envio" class="form-control" placeholder="Hora de envio">
-                        </div>
-                        <label for="exampleFormControlSelect1">Seleccione días de envio</label>
-                        <select class="form-control" value="{{orders.dia}}" id="exampleFormControlSelect1" name="dia">
-                            <option>Lunes</option>
-                            <option>Martes</option>
-                            <option>Miercoles</option>
-                            <option>Jueves</option>
-                            <option>Viernes</option>
-                            <option>Sabado</option>
-                            <option>Domingo</option>
-                            <option>Lun, Mi y Vi</option>
-                            <option>Ma, Ju, Sa</option>
-                            <option>Lun, Ma, Mi</option>
-                            <option>Ju, Vi, Sa</option>
-                            <option>Todos los dias</option>
-                        </select>
-                        <div class="form-group">
-                            <input type="text" value="{{orders.direccion}}" name="direccion" class="form-control" placeholder="Address">
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-success btn-block">
-                                Guardar
-                            </button>
-                        </div>
-                    </form>
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <div class="d-flex flex-row justify-content-center align-items-center">
+                    <a href="login.html"><img class="img-logo" style="width: 100px ; height: 50px;"
+                            src="/img/LOGO (3).png" alt=""></a>
+                    <div class="" style="font-weight: 800; font-size: 23px; color: rgb(71, 148, 47);">Ance</div>
+                    <div class="" style="font-weight: 800; font-size: 23px; color: rgb(196, 127, 38);">Food</div>
+                </div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="/links/add" class="nav-link text-white active" aria-current="page">
+                        <svg class="bi me-2" width="16" height="16">
+                        </svg>
+                        Pedidos
+                    </a>
+                </li>
+                <li>
+                    <a href="/links/addComment" class="nav-link text-white ">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#speedometer2" />
+                        </svg>
+                        Agregar nueva orden
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#table" />
+                        </svg>
+                        Orders
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#grid" />
+                        </svg>
+                        Products
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#people-circle" />
+                        </svg>
+                        Customers
+                    </a>
+                </li>
+            </ul>
+            <div class="dropdown-divider"></div>
+            <div class="btn-group">
+                <a href="#"
+                    class="d-flex justify-content-center align-items-center text-decoration-none dropdown-toggle dropdown-toggle-split text-white"
+                    data-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="" width="50" height="50" class="rounded-circle me-2 m-2">
+                    <div class="d-flex justify-content-center align-items-center text-white"
+                        style="margin-right: 10px;">
+                        Bienvenido </div>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-dark text-small shadow">
+                    <a class="dropdown-item" href="/links/edit-register">Configuracion</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/Logout">Cerrar Sesion</a>
                 </div>
             </div>
         </div>
+    </div>
+    {{/if}}
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-4 mx-auto">
 
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/links/edit/{{orders.id}}" method="POST">
+                            <label for="exampleFormControlSelect1">Seleccione platillo</label>
+                            <select class="form-control" value="{{orders.plate}}" id="exampleFormControlSelect1"
+                                name="plate" autofocus>
+                                <option>Arroz con pollo</option>
+                                <option>Lomo saltado</option>
+                                <option>Carapulcra</option>
+                                <option>Guiso de pollo</option>
+                                <option>Guiso de carne</option>
+                            </select>
+                            <div class="form-group">
+                                <input type="time" value="{{orders.hora_envio}}" name="hora_envio" class="form-control"
+                                    placeholder="Hora de envio">
+                            </div>
+                            <label for="exampleFormControlSelect1">Seleccione días de envio</label>
+                            <select class="form-control" value="{{orders.dia}}" id="exampleFormControlSelect1"
+                                name="dia">
+                                <option>Lunes</option>
+                                <option>Martes</option>
+                                <option>Miercoles</option>
+                                <option>Jueves</option>
+                                <option>Viernes</option>
+                                <option>Sabado</option>
+                                <option>Domingo</option>
+                                <option>Lun, Mi y Vi</option>
+                                <option>Ma, Ju, Sa</option>
+                                <option>Lun, Ma, Mi</option>
+                                <option>Ju, Vi, Sa</option>
+                                <option>Todos los dias</option>
+                            </select>
+                            <div class="form-group">
+                                <input type="text" value="{{orders.direccion}}" name="direccion" class="form-control"
+                                    placeholder="Address">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-success btn-block">
+                                    Guardar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>

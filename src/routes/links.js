@@ -94,8 +94,63 @@ router.post('/edit-register/:id', isLoggedIn, async (req, res) =>{
     };
     changeregister.password = await helpers.encryptPassword(password);
     await pool.query('UPDATE users set ? WHERE ID = ?', [changeregister, id]);
-    req.flash('success', 'update profile successfully!');
+    req.flash('success', 'Actualizado satisfactoriamente!');
     res.redirect('/links/edit-register');
 });
 
 module.exports = router;
+
+
+
+/* COMENTARIOS DE USUARIOS  */
+
+router.get('/addComment', isLoggedIn, (req, res) => {
+    res.render('Comments/addComment');
+});
+
+
+router.post('/addComment', isLoggedIn, async (req, res) => {
+    const {comentario} = req.body;
+    const newcomment = {
+        comentario,
+        user_id1: req.user.id
+    };
+    await pool.query('INSERT INTO recommends set ?', [newcomment]),
+    req.flash('success', 'Comentario agregado exitosamente');
+    res.redirect('/links/Comments');
+});
+
+
+
+router.get('/Comments', isLoggedIn, async (req, res) =>{
+    const recommends = await pool.query('SELECT * FROM recommends');
+    res.render('Comments/Comments', {recommends});
+});
+
+
+
+
+router.get('/deletecomment/:id', isLoggedIn, async (req, res) =>{
+    const { id } = req.params;
+    await pool.query('DELETE FROM recommends WHERE ID = ?', [id]);
+    req.flash('success', 'Comentario borrado exitosamente!');
+    res.redirect('/Comments/Comments');
+});
+
+router.get('/editcomment/:id', isLoggedIn, async (req, res) => {
+    const {id}  = req.params;
+    const comment = await pool.query('SELECT * FROM recommends WHERE id = ?', [id]);
+    res.render('Comments/editcomment', {comment: comment[0]});
+});
+
+
+router.post('/editcomment/:id', isLoggedIn, async (req, res) =>{
+    const {id}  = req.params;
+    const {comentario} = req.body;
+    const newcomment = {
+        comentario
+    };
+    await pool.query('UPDATE recommends set ? WHERE ID = ?', [newcomment, id]);
+    req.flash('success', 'Comentario actualizado');
+    res.redirect('/Comments/Comments');
+});
